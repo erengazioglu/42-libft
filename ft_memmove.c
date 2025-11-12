@@ -1,0 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/12 18:01:57 by egaziogl          #+#    #+#             */
+/*   Updated: 2025/11/12 19:17:37 by egaziogl         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void *ft_memmove(void *dest, const void *src, size_t n)
+{
+	void *temp = dest;
+
+	if (dest == NULL && src == NULL)
+		return (NULL);
+	if (dest > src)
+	{
+		dest += n - 1;
+		src += n - 1;
+	}
+	while (n--)
+	{
+		if (dest > src)
+			*((unsigned char *) dest--) = *((unsigned char *) src--);
+		else
+			*((unsigned char *) dest++) = *((unsigned char *) src++);
+	}
+	return (temp);
+}
