@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 18:36:35 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/13 18:48:59 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/14 01:20:18 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
+	if (!(*needle))
+		return ((char *) haystack);
 	while (*haystack && len--)
 	{
 		if (*haystack == *needle)
