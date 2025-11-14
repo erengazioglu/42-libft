@@ -23,6 +23,7 @@ SRCS = \
 	ft_strchr.c \
 	ft_strrchr.c \
 	ft_strnstr.c \
+	ft_strdup.c \
 	ft_memcpy.c \
 	ft_memcmp.c \
 	ft_memchr.c \
