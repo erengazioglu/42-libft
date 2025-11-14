@@ -28,7 +28,18 @@ SRCS = \
 	ft_memcmp.c \
 	ft_memchr.c \
 	ft_memmove.c \
-	ft_memset.c
+	ft_memset.c \
+	ft_itoa.c \
+	ft_putchar_fd.c \
+	ft_putendl_fd.c \
+	ft_putnbr_fd.c \
+	ft_putstr_fd.c \
+	ft_split.c \
+	ft_striteri.c \
+	ft_strjoin.c \
+	ft_strmapi.c \
+	ft_strtrim.c \
+	ft_substr.c
 
 OBJS := $(SRCS:%.c=obj/%.o)
 
