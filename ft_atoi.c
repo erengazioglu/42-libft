@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 18:20:54 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/13 01:37:27 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/14 14:45:21 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ int	ft_atoi(const char *str)
 	acc = 0;
 	if (!ft_strncmp(str, "-2147483647", 11))
 		return (-2147483647);
-	if (*str == '-' || *str == '+')
+	while (ft_strchr("\t\v\f\r\n ", *str))
+		str++;
+	if (ft_strchr("-+", *str))
 	{
 		if (*str == '-')
 			sign *= -1;
