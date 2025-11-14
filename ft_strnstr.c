@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 18:36:35 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/14 01:20:18 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/14 11:47:32 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	if (!(*needle))
 		return ((char *) haystack);
+	if (!len)
+		return (NULL);
 	while (*haystack && len--)
 	{
 		if (*haystack == *needle)
@@ -25,15 +27,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
-// #include <stdio.h>
-
-// int		main(void)
-// {
-// 	printf(
-// 		"'%s' in '%s': %s\n", 
-// 		"lo", 
-// 		"hello my friend to the end", 
-// 		ft_strnstr("hello my friend to the end", "lo", 16)
-// 	);
-// }

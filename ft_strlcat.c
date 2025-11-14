@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 15:47:02 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/12 14:37:42 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/14 11:34:23 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t len;
+	size_t	len;
 
+	if (!dstsize)
+		return (ft_strlen(src));
 	len = ft_strlen(dst);
 	if (len > dstsize)
 		len = dstsize;
