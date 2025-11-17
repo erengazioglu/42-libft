@@ -6,30 +6,80 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:41:15 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/17 23:37:25 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/18 00:52:56 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_places(int n)
+static int	count_chars(int n)
 {
 	int	count;
 
 	count = 0;
+	if (n <= 0)
+		count++;
 	while (n)
 	{
 		n /= 10;
 		count++;
 	}
-	return (count)
+	return (count);
+}
+
+static void	copy_digits(int n, char *s, int len)
+{
+	if (n < 0)
+	{
+		*s = '-';
+		n *= -1;
+	}
+	s += len - 1;
+	while (n)
+	{
+		*(s--) = '0' + (n % 10);
+		n /= 10;
+	}
 }
 
 char	*ft_itoa(int n)
 {
-	int	temp;
+	char	*result;
+	char	*ptr;
+	int		len;
 
-	while (n)
+	len = count_chars(n);
+	result = ft_calloc(len + 1, sizeof(char));
+	if (!result)
+		return (NULL);
+	if (n == 0)
+		*result = '0';
+	else if (n == -2147483648)
+		ft_strlcpy(result, "-2147483648", 12);
+	else
+		copy_digits(n, result, len);
 
-		n /= 10;
+	return (result);
 }
+
+// #include <stdio.h>
+// #include <limits.h>
+
+// void	print_itoa(int n)
+// {
+// 	char	*str;
+
+// 	str = ft_itoa(n);
+// 	printf("%d -> %s\n", n, str);
+// 	free(str);
+// }
+
+// int	main(void)
+// {
+// 	print_itoa(0);
+// 	print_itoa(-1);
+// 	print_itoa(234);
+// 	print_itoa(-2323423);
+// 	print_itoa(INT_MAX);
+// 	print_itoa(INT_MIN);
+// }
