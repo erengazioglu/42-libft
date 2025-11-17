@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:41:15 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/18 00:52:56 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/18 00:53:24 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ static void	copy_digits(int n, char *s, int len)
 char	*ft_itoa(int n)
 {
 	char	*result;
-	char	*ptr;
 	int		len;
 
 	len = count_chars(n);
