@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:43:14 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/18 19:56:23 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/18 20:21:43 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (temp);
 	len += start;
 	ptr = temp;
-	while (start < len)
+	while (start < len && s[start])
 	{
 		*(temp++) = s[start];
 		start++;

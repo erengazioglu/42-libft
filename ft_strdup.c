@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:24:02 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/18 19:55:20 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/18 20:10:12 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,11 @@ char	*ft_strdup(const char *s)
 	size_t	len;
 
 	len = ft_strlen(s);
-	temp = malloc((len + 1) * sizeof(char));
+	temp = ft_calloc((len + 1), sizeof(char));
 	if (!temp)
 		return (NULL);
 	ptr = temp;
 	while (len--)
 		*(temp++) = *(s++);
-	*temp = '\0';
 	return (ptr);
 }

@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:41:56 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/18 19:54:25 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/18 20:00:44 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putnbr_fd(int n, int fd)
 	if (n == 0)
 		write(fd, "0", 1);
 	else if (n == -2147483648)
-		write(fd, "-2147483648", 12);
+		write(fd, "-2147483648", 11);
 	else if (n < 0)
 	{
 		write(fd, "-", 1);
