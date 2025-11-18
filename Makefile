@@ -49,7 +49,7 @@ SRCS_BONUS = \
 	ft_lstlast.c \
 	ft_lstmap.c \
 	ft_lstnew.c \
-	ft_lstrsize.c
+	ft_lstsize.c
 
 OBJS := $(SRCS:%.c=obj/%.o)
 OBJS_BONUS := $(SRCS_BONUS:%.c=obj/%.o)
