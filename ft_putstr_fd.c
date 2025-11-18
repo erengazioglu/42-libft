@@ -6,8 +6,14 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:42:03 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/14 15:42:04 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/18 02:37:32 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putstr_fd(char *s, int fd);
+#include "libft.h"
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	while (*s)
+		ft_putchar_fd(*(s++), fd);
+}
