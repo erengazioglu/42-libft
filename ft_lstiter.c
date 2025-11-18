@@ -6,10 +6,17 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 03:15:20 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/18 03:26:45 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/18 16:33:48 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void 	ft_lstiter(t_list *lst, void (*f)(void *));
+void 	ft_lstiter(t_list *lst, void (*f)(void *))
+{
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
+}

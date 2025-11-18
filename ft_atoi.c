@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 18:20:54 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/14 14:45:21 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/18 19:48:55 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_atoi(const char *str)
 	int	acc;
 	int	sign;
 
+	if (!(*str))
+		return (0);
 	sign = 1;
 	acc = 0;
 	if (!ft_strncmp(str, "-2147483647", 11))
@@ -37,3 +39,11 @@ int	ft_atoi(const char *str)
 	}
 	return (sign * acc);
 }
+// #include <bsd/string.h>
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	printf("%d\n", ft_atoi(""));
+// 	printf("%d\n", atoi(""));
+// }
