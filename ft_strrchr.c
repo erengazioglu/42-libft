@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 16:07:33 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/10 16:40:46 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/18 20:15:46 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *) &(s[i]));
 	while (i >= 0)
 	{
-		if (s[i] == c)
+		if ((unsigned char) s[i] == (unsigned char) c)
 			return ((char *) &(s[i]));
 		i--;
 	}
