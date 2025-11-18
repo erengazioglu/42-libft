@@ -40,17 +40,32 @@ SRCS = \
 	ft_strmapi.c \
 	ft_strtrim.c \
 	ft_substr.c
+SRCS_BONUS = \
+	ft_lstadd_back.c \
+	ft_lstadd_front.c \
+	ft_lstclear.c \
+	ft_lstdelone.c \
+	ft_lstiter.c \
+	ft_lstlast.c \
+	ft_lstmap.c \
+	ft_lstnew.c \
+	ft_lstrsize.c \
+	ft_memchr.c
 
 OBJS := $(SRCS:%.c=obj/%.o)
+OBJS_BONUS := $(SRCS_BONUS:%.c=obj/%.o)
 
-all: $(NAME)
+all: $(NAME) bonus
 
 so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(SRCS_BONUS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS) $(OBJS_BONUS)
 
 $(NAME): $(OBJS)
 	ar crs $@ $^
+
+bonus: $(OBJS_BONUS)
+	ar crs $(NAME) $^
 
 obj/%.o: %.c
 	mkdir -p obj
