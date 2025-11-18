@@ -6,8 +6,18 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:42:24 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/14 15:42:25 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/18 01:09:26 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		f(i, &(s[i]));
+		i++;
+	}
+}
