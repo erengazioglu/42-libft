@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 03:15:30 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/18 18:57:39 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/18 19:51:30 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!lst)
 		return (NULL);
-	// printf("===\n=== lstmap start\n");
-	// printf("content: %s\n", (char *) lst->content);
-	// printf("cb(content): %s\n", (char *) f(lst->content));
 	new_lst = ft_lstnew(lst->content);
 	if (!new_lst)
 		return (NULL);

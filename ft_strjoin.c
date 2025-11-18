@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:42:44 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/15 12:20:39 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/18 19:55:31 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*result;
 	int		len;
-	
+
 	len = ft_strlen(s1) + ft_strlen(s2);
 	result = ft_calloc(len + 1, sizeof(char));
 	if (!result)

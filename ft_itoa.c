@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:41:15 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/18 00:53:24 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/18 19:50:17 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ char	*ft_itoa(int n)
 		ft_strlcpy(result, "-2147483648", 12);
 	else
 		copy_digits(n, result, len);
-
 	return (result);
 }
 

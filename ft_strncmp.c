@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 16:58:34 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/10 17:20:16 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/18 19:55:57 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned char c1;
-	unsigned char c2;
-	
+	unsigned char	c1;
+	unsigned char	c2;
+
 	if (n == 0)
 		return (0);
 	while (n > 1 && *s1 && *s2)

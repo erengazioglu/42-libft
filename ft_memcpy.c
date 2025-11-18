@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:47:29 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/12 16:03:53 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/18 19:52:41 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	void *temp;
-	
+	void	*temp;
+
 	if (dest == src)
 		return (dest);
 	temp = dest;
