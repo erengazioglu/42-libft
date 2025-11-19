@@ -2,8 +2,6 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
 NAME = libft.a
-DEPS = \
-	libft.h
 SRCS = \
 	ft_atoi.c \
 	ft_bzero.c \
