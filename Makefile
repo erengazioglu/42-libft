@@ -55,9 +55,10 @@ OBJS_BONUS := $(SRCS_BONUS:%.c=obj/%.o)
 
 all: $(NAME) bonus
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(SRCS_BONUS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS) $(OBJS_BONUS)
+# for libft-unit-test
+# so:
+# 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(SRCS_BONUS)
+# 	gcc -nostartfiles -shared -o libft.so $(OBJS) $(OBJS_BONUS)
 
 $(NAME): $(OBJS)
 	ar crs $@ $^
