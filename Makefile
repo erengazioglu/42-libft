@@ -1,6 +1,5 @@
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
-.SUFFIXES: 
 
 NAME = libft.a
 DEPS = \
