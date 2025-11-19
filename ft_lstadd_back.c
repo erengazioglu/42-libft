@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 03:14:07 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/18 20:08:50 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/19 05:13:58 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
+	t_list	*temp;
+
 	if (!(*lst))
 	{
 		*lst = new;
 		return ;
 	}
-	while ((*lst)->next)
-		*lst = (*lst)->next;
-	(*lst)->next = new;
+	temp = *lst;
+	while (temp->next)
+		temp = temp->next;
+	temp->next = new;
 }
