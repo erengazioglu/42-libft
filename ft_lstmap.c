@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 03:15:30 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/18 19:51:30 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/19 05:27:14 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!lst)
 		return (NULL);
-	new_lst = ft_lstnew(lst->content);
+	new_lst = ft_lstnew(f(lst->content));
 	if (!new_lst)
 		return (NULL);
-	lst = lst->next;
-	while (lst)
+	// lst = lst->next;
+	while (lst->next)
 	{
+		lst = lst->next;
 		node = ft_lstnew(f(lst->content));
 		if (!node)
 		{
@@ -33,7 +34,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			return (NULL);
 		}
 		ft_lstadd_back(&new_lst, node);
-		lst = lst->next;
 	}
 	return (new_lst);
 }
