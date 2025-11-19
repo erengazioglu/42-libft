@@ -6,12 +6,11 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 03:15:30 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/19 05:28:58 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/19 05:44:40 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
