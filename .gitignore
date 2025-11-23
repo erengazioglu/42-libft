@@ -5,3 +5,4 @@ libft.a
 tests/run
 obj/
 tests/obj/
+libft.a
