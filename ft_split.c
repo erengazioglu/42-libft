@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:42:11 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/19 14:33:54 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/25 12:11:03 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 static void	free_list(char **list)
 {
+	char	**temp;
+
+	temp = list;
 	while (*list)
 		free(*(list++));
-	free(list);
+	free(temp);
 }
 
 static int	count_words(char const *s, char c)
