@@ -1,61 +1,60 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 15:41:15 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/12/21 18:35:11 by egaziogl         ###   ########.fr       */
+/*   Created: 2025/11/30 15:53:04 by egaziogl          #+#    #+#             */
+/*   Updated: 2025/12/21 18:35:27 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "limits.h"
 
-static int	count_chars(int n)
+static int	count_chars(unsigned long n, char *base)
 {
 	int	count;
+	int	len;
 
+	if (!n)
+		return (1);
 	count = 0;
-	if (n <= 0)
-		count++;
+	len = ft_strlen(base);
 	while (n)
 	{
-		n /= 10;
+		n /= len;
 		count++;
 	}
 	return (count);
 }
 
-static void	copy_digits(int n, char *s, int len)
+static void	copy_digits(unsigned long n, char *s, int len, char *base)
 {
-	if (n < 0)
-	{
-		*s = '-';
-		n *= -1;
-	}
+	int	base_len;
+
+	base_len = ft_strlen(base);
 	s += len - 1;
 	while (n)
 	{
-		*(s--) = '0' + (n % 10);
-		n /= 10;
+		*(s--) = base[n % base_len];
+		n /= base_len;
 	}
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa_base(unsigned long n, char *base)
 {
 	char	*result;
 	int		len;
 
-	len = count_chars(n);
+	len = count_chars(n, base);
 	result = ft_calloc(len + 1, sizeof(char));
 	if (!result)
 		return (NULL);
 	if (n == 0)
 		*result = '0';
-	else if (n == -2147483648)
-		ft_strlcpy(result, "-2147483648", 12);
 	else
-		copy_digits(n, result, len);
+		copy_digits(n, result, len, base);
 	return (result);
 }

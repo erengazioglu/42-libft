@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_itoa_uint.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 15:41:15 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/12/21 18:35:11 by egaziogl         ###   ########.fr       */
+/*   Created: 2025/12/14 14:19:52 by egaziogl          #+#    #+#             */
+/*   Updated: 2025/12/21 19:13:03 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_chars(int n)
+static int	count_chars(unsigned int n)
 {
 	int	count;
 
+	if (!n)
+		return (1);
 	count = 0;
-	if (n <= 0)
-		count++;
 	while (n)
 	{
 		n /= 10;
@@ -27,13 +27,8 @@ static int	count_chars(int n)
 	return (count);
 }
 
-static void	copy_digits(int n, char *s, int len)
+static void	copy_digits(unsigned int n, char *s, int len)
 {
-	if (n < 0)
-	{
-		*s = '-';
-		n *= -1;
-	}
 	s += len - 1;
 	while (n)
 	{
@@ -42,7 +37,7 @@ static void	copy_digits(int n, char *s, int len)
 	}
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa_uint(unsigned int n)
 {
 	char	*result;
 	int		len;
@@ -52,9 +47,10 @@ char	*ft_itoa(int n)
 	if (!result)
 		return (NULL);
 	if (n == 0)
+	{
 		*result = '0';
-	else if (n == -2147483648)
-		ft_strlcpy(result, "-2147483648", 12);
+		*(result + 1) = '\0';
+	}
 	else
 		copy_digits(n, result, len);
 	return (result);

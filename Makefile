@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 
 NAME = libft.a
 SRCS = \
@@ -47,11 +47,15 @@ SRCS_BONUS = \
 	ft_lstmap.c \
 	ft_lstnew.c \
 	ft_lstsize.c
+SRCS_EXTRA = \
+	ft_itoa_base.c \
+	ft_itoa_uint.c
 
 OBJS := $(SRCS:%.c=obj/%.o)
 OBJS_BONUS := $(SRCS_BONUS:%.c=obj/%.o)
+OBJS_EXTRA := $(SRCS_EXTRA:%.c=obj/%.o)
 
-all: $(NAME) bonus
+all: $(NAME) bonus extra
 
 # for libft-unit-test
 # so:
@@ -64,8 +68,11 @@ $(NAME): $(OBJS)
 bonus: $(OBJS_BONUS)
 	ar crs $(NAME) $^
 
+extra: $(OBJS_EXTRA)
+	ar crs $(NAME) $^
+
 obj/%.o: %.c
-	mkdir -p obj
+	@mkdir -p obj
 	$(CC) $(CFLAGS) -c $^ -o $@
 
 fclean: clean

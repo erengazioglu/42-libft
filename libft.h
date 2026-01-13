@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 00:11:29 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/18 19:57:51 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/12/14 14:22:04 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,17 @@
 
 # include <stddef.h>
 # include <stdlib.h>
+
+// ANSI text defines
+# define RST "\e[0m"
+# define BLK "\e[0;30m"
+# define RED "\e[0;31m"
+# define GRN "\e[0;32m"
+# define YEL "\e[0;33m"
+# define BLU "\e[0;34m"
+# define MAG "\e[0;35m"
+# define CYN "\e[0;36m"
+# define WHT "\e[0;37m"
 
 // Part 1: Libc functions
 int		ft_isalnum(int c);
@@ -70,5 +81,10 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+// Part 4: Original functions
+
+char	*ft_itoa_base(unsigned long n, char *base);
+char	*ft_itoa_uint(unsigned int n);
 
 #endif

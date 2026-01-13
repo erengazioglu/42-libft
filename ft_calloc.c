@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 14:47:38 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/24 17:38:12 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/19 04:09:34 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,10 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t			bytes;
 	void			*ptr;
 
-	if (count == 0 || size == 0)
-	{
-		temp = malloc(0);
-		if (!temp)
-			return (NULL);
-		*temp = 0;
-		return (temp);
-	}
 	if (count > SIZE_MAX / size)
 		return (NULL);
+	if (count == 0 || size == 0)
+		return (malloc(0));
 	bytes = count * size;
 	temp = malloc(bytes);
 	if (!temp)

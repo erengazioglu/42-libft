@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 03:14:53 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/24 17:59:48 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/18 19:50:53 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	while (*lst)
 	{
 		next = (*lst)->next;
-		if (del && (*lst)->content)
-			del((*lst)->content);
-		free(*lst);
+		del(*lst);
 		*lst = next;
 	}
 }

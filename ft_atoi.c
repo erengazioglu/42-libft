@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 18:20:54 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/18 19:48:55 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/12/21 18:35:04 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,3 @@ int	ft_atoi(const char *str)
 	}
 	return (sign * acc);
 }
-// #include <bsd/string.h>
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	printf("%d\n", ft_atoi(""));
-// 	printf("%d\n", atoi(""));
-// }
