@@ -50,17 +50,27 @@ SRCS_BONUS = \
 SRCS_EXTRA = \
 	ft_itoa_base.c \
 	ft_itoa_uint.c
+SRCS_PRINTF = \
+	printf_ptr.c \
+	padding_int.c \
+	printf_str.c \
+	printf_percent.c \
+	ft_printf.c \
+	printf_hex.c \
+	helpers.c \
+	ft_lstsize.c \
+	padding_str.c \
+	printf_int.c \
+	printf_uint.c \
+	printf_char.c \
+	parse.c 
 
-OBJS := $(SRCS:%.c=obj/%.o)
-OBJS_BONUS := $(SRCS_BONUS:%.c=obj/%.o)
-OBJS_EXTRA := $(SRCS_EXTRA:%.c=obj/%.o)
+OBJS := $(SRCS:src/base/%.c=obj/%.o)
+OBJS_BONUS := $(SRCS_BONUS:src/base_bonus/%.c=obj/%.o)
+OBJS_EXTRA := $(SRCS_EXTRA:src/extra/%.c=obj/%.o)
+OBJS_PRINTF := $(SRCS_PRINTF:src/ft_printf/%.c=obj/%.o)
 
-all: $(NAME) bonus extra
-
-# for libft-unit-test
-# so:
-# 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(SRCS_BONUS)
-# 	gcc -nostartfiles -shared -o libft.so $(OBJS) $(OBJS_BONUS)
+all: $(NAME) bonus extra printf
 
 $(NAME): $(OBJS)
 	ar crs $@ $^
@@ -69,6 +79,9 @@ bonus: $(OBJS_BONUS)
 	ar crs $(NAME) $^
 
 extra: $(OBJS_EXTRA)
+	ar crs $(NAME) $^
+
+printf: $(OBJS_PRINTF)
 	ar crs $(NAME) $^
 
 obj/%.o: %.c
