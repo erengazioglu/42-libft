@@ -69,7 +69,7 @@ OBJS_BONUS := $(SRCS_BONUS:%.c=obj/base_bonus/%.o)
 OBJS_EXTRA := $(SRCS_EXTRA:%.c=obj/extra/%.o)
 OBJS_PRINTF := $(SRCS_PRINTF:%.c=obj/ft_printf/%.o)
 
-all: $(NAME) bonus extra printf
+all: $(NAME) $(OBJS_BONUS) $(OBJS_EXTRA) $(OBJS_PRINTF)
 
 $(NAME): $(OBJS)
 	ar crs $@ $^
