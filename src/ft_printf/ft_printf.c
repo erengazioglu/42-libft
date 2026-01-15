@@ -6,11 +6,11 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 14:33:12 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/01/15 14:38:25 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/01/15 16:26:50 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "../../include/ft_printf.h"
 
 static int	print_conv(t_conv *conv, va_list *args)
 {

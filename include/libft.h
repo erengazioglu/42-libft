@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 00:11:29 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/01/15 14:39:37 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/01/15 16:27:18 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include <stdint.h>
+# include <stdarg.h>
 
 // ANSI text defines
 # define RST "\e[0m"
@@ -85,7 +86,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-
 // Part 4: Extras
 
 char	*ft_itoa_base(unsigned long n, char *base);
@@ -93,18 +93,9 @@ char	*ft_itoa_uint(unsigned int n);
 int		ft_strfind(char *s, char c);
 char	*ft_strnjoin(char *s1, char *s2, ssize_t n, bool free_s1);
 
-
 // Part 5: ft_printf
 
 typedef unsigned int	t_flags;
-typedef struct s_conv
-{
-	t_flags			flags;
-	char			specifier;
-	unsigned int	precision;
-	unsigned int	width;
-}	t_conv;
-
 int		ft_printf(const char *fstr, ...);
 
 #endif

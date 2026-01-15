@@ -51,24 +51,23 @@ SRCS_EXTRA = \
 	ft_itoa_base.c \
 	ft_itoa_uint.c
 SRCS_PRINTF = \
-	printf_ptr.c \
-	padding_int.c \
-	printf_str.c \
-	printf_percent.c \
 	ft_printf.c \
-	printf_hex.c \
 	helpers.c \
-	ft_lstsize.c \
+	padding_int.c \
 	padding_str.c \
-	printf_int.c \
-	printf_uint.c \
+	parse.c \
 	printf_char.c \
-	parse.c 
+	printf_hex.c \
+	printf_int.c \
+	printf_percent.c \
+	printf_ptr.c \
+	printf_str.c \
+	printf_uint.c 
 
-OBJS := $(SRCS:src/base/%.c=obj/%.o)
-OBJS_BONUS := $(SRCS_BONUS:src/base_bonus/%.c=obj/%.o)
-OBJS_EXTRA := $(SRCS_EXTRA:src/extra/%.c=obj/%.o)
-OBJS_PRINTF := $(SRCS_PRINTF:src/ft_printf/%.c=obj/%.o)
+OBJS := $(SRCS:%.c=obj/base/%.o)
+OBJS_BONUS := $(SRCS_BONUS:%.c=obj/base_bonus/%.o)
+OBJS_EXTRA := $(SRCS_EXTRA:%.c=obj/extra/%.o)
+OBJS_PRINTF := $(SRCS_PRINTF:%.c=obj/ft_printf/%.o)
 
 all: $(NAME) bonus extra printf
 
@@ -84,9 +83,18 @@ extra: $(OBJS_EXTRA)
 printf: $(OBJS_PRINTF)
 	ar crs $(NAME) $^
 
-obj/%.o: %.c
-	@mkdir -p obj
-	$(CC) $(CFLAGS) -c $^ -o $@
+$(OBJS): $(SRCS:%.c=src/base/%.c)
+	@mkdir -p obj obj/base
+	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJS_BONUS): $(SRCS_BONUS:%.c=src/base_bonus/%.c)
+	@mkdir -p obj obj/base_bonus
+	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJS_EXTRA): $(SRCS_EXTRA:%.c=src/extra/%.c)
+	@mkdir -p obj obj/extra
+	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJS_PRINTF): $(SRCS_PRINTF:%.c=src/ft_printf/%.c)
+	@mkdir -p obj obj/ft_printf
+	$(CC) $(CFLAGS) -c $< -o $@
 
 fclean: clean
 	rm -f $(NAME)
