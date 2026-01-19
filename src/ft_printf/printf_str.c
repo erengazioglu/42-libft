@@ -6,11 +6,11 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 12:46:27 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/12/20 11:55:09 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/01/19 19:48:41 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../include/ft_printf.h"
 
 int	printf_str(t_conv *conv, void *val)
 {

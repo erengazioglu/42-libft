@@ -6,11 +6,11 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 18:13:30 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/12/20 11:56:51 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/01/19 19:49:07 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../include/ft_printf.h"
 
 int	printf_uint(t_conv *conv, unsigned int val)
 {

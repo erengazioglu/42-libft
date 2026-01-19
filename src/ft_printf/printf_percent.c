@@ -6,11 +6,11 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 14:39:50 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/12/14 14:40:32 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/01/19 19:48:35 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../include/ft_printf.h"
 
 int	printf_percent(void)
 {

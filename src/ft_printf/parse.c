@@ -6,11 +6,11 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 20:25:03 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/12/20 11:58:20 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/01/19 19:48:25 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../include/ft_printf.h"
 
 t_conv	*new_conv(void)
 {

@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 10:16:21 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/01/16 10:30:06 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/01/19 19:49:29 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 
 int	main(void)
 {
-	printf("atoi: %d\n", ft_atoi("234"));
+	ft_printf("atoi: %d\n", ft_atoi("234"));
 }

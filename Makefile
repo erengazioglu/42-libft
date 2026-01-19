@@ -72,7 +72,7 @@ OBJS_PRINTF := $(SRCS_PRINTF:%.c=obj/ft_printf/%.o)
 all: $(NAME) bonus extra printf
 
 $(NAME): $(OBJS)
-	ar crs $@ $^
+	ar vrs $@ $^
 
 bonus: $(OBJS_BONUS)
 	ar crs $(NAME) $^
@@ -85,16 +85,16 @@ printf: $(OBJS_PRINTF)
 
 $(OBJS): $(SRCS:%.c=src/base/%.c)
 	@mkdir -p obj obj/base
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $(@:obj/base/%.o=src/base/%.c) -o $@
 $(OBJS_BONUS): $(SRCS_BONUS:%.c=src/base_bonus/%.c)
 	@mkdir -p obj obj/base_bonus
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $(@:obj/base_bonus/%.o=src/base_bonus/%.c) -o $@
 $(OBJS_EXTRA): $(SRCS_EXTRA:%.c=src/extra/%.c)
 	@mkdir -p obj obj/extra
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $(@:obj/extra/%.o=src/extra/%.c) -o $@
 $(OBJS_PRINTF): $(SRCS_PRINTF:%.c=src/ft_printf/%.c)
 	@mkdir -p obj obj/ft_printf
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $(@:obj/ft_printf/%.o=src/ft_printf/%.c) -o $@
 
 fclean: clean
 	rm -f $(NAME)

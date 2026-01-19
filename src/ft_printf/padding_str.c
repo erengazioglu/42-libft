@@ -6,11 +6,11 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 19:33:28 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/12/20 11:55:51 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/01/19 19:48:26 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../include/ft_printf.h"
 
 int	print_lpadding_str(t_conv *conv, int *padding)
 {

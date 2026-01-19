@@ -6,11 +6,11 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 14:31:07 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/12/20 11:54:12 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/01/19 19:48:08 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../include/ft_printf.h"
 
 static int	count_chars(int n, int base)
 {
