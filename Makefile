@@ -72,7 +72,7 @@ OBJS_PRINTF := $(SRCS_PRINTF:%.c=obj/ft_printf/%.o)
 all: $(NAME) bonus extra printf
 
 $(NAME): $(OBJS)
-	ar vrs $@ $^
+	ar crs $@ $^
 
 bonus: $(OBJS_BONUS)
 	ar crs $(NAME) $^
