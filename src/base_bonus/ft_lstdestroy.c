@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstdestroy.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/18 03:12:53 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/01/24 14:34:01 by egaziogl         ###   ########.fr       */
+/*   Created: 2026/01/23 14:23:05 by egaziogl          #+#    #+#             */
+/*   Updated: 2026/01/23 14:25:01 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstdestroy(t_list *lst, void (*del)(void *))
 {
-	t_list	*new;
-
-	new = (t_list *) malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	new->prev = NULL;
-	return (new);
+	ft_lstclear(&lst, del);
+	free(lst);
 }
