@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint.c                                      :+:      :+:    :+:   */
+/*   ft_get_filename.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/24 14:51:19 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/03/11 14:28:16 by egaziogl         ###   ########.fr       */
+/*   Created: 2026/03/09 19:57:32 by egaziogl          #+#    #+#             */
+/*   Updated: 2026/03/11 15:27:04 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
-
-void	ft_lstprint(t_list *lst)
+char	*ft_get_filename(char *str)
 {
-	t_list	*node;
+	char	*retval;
 
-	node = lst;
-	if (!node)
-		ft_printf("%sList is empty/null.%s\n", YEL, RST);
-	while (node)
+	retval = str;
+	while (*str)
 	{
-		ft_printf("Node: %p || Prev %p, Next %p\n",
-			node, node->prev, node->next);
-		node = node->next;
+		if (*str == '/' && *(str + 1) && *(str + 1) != '/')
+			retval = str + 1;
+		str++;
 	}
+	return (retval);
 }

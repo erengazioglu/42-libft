@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint.c                                      :+:      :+:    :+:   */
+/*   ft_str_equals.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/24 14:51:19 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/03/11 14:28:16 by egaziogl         ###   ########.fr       */
+/*   Created: 2026/03/09 18:12:03 by egaziogl          #+#    #+#             */
+/*   Updated: 2026/03/11 15:27:11 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-void	ft_lstprint(t_list *lst)
+bool	ft_str_equals(char *str, char *test)
 {
-	t_list	*node;
-
-	node = lst;
-	if (!node)
-		ft_printf("%sList is empty/null.%s\n", YEL, RST);
-	while (node)
+	while (*str && *test)
 	{
-		ft_printf("Node: %p || Prev %p, Next %p\n",
-			node, node->prev, node->next);
-		node = node->next;
+		if (*(str++) != *(test++))
+			return (false);
 	}
+	if (*test || *str)
+		return (false);
+	return (true);
 }

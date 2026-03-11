@@ -48,10 +48,17 @@ SRCS_BONUS = \
 	ft_lstnew.c \
 	ft_lstsize.c \
 	ft_lstdestroy.c \
-	ft_lstprint.c
+	ft_lstprint.c \
+	ft_lstget.c \
+	ft_lstfind.c \
+	ft_lstremove.c
 SRCS_EXTRA = \
 	ft_itoa_base.c \
-	ft_itoa_uint.c
+	ft_itoa_uint.c \
+	ft_strcpy_lb.c \
+	ft_strfind.c \
+	ft_strnjoin.c \
+	ft_strcat.c
 SRCS_PRINTF = \
 	ft_printf.c \
 	helpers.c \
@@ -65,13 +72,23 @@ SRCS_PRINTF = \
 	printf_ptr.c \
 	printf_str.c \
 	printf_uint.c 
+SRCS_GNL = \
+	get_next_line.c
+SRCS_SOLONG = \
+	ft_str_startswith.c \
+	ft_str_endswith.c \
+	ft_str_equals.c \
+	ft_get_filename.c \
+	read_n_lines.c
 
-OBJS := $(SRCS:%.c=obj/base/%.o)
-OBJS_BONUS := $(SRCS_BONUS:%.c=obj/base_bonus/%.o)
-OBJS_EXTRA := $(SRCS_EXTRA:%.c=obj/extra/%.o)
-OBJS_PRINTF := $(SRCS_PRINTF:%.c=obj/ft_printf/%.o)
+OBJS		:= $(SRCS:%.c=obj/base/%.o)
+OBJS_BONUS	:= $(SRCS_BONUS:%.c=obj/base_bonus/%.o)
+OBJS_EXTRA	:= $(SRCS_EXTRA:%.c=obj/extra/%.o)
+OBJS_PRINTF	:= $(SRCS_PRINTF:%.c=obj/ft_printf/%.o)
+OBJS_GNL	:= $(SRCS_GNL:%.c=obj/get_next_line/%.o)
+OBJS_SOLONG	:= $(SRCS_SOLONG:%.c=obj/so_long/%.o)
 
-all: $(NAME) bonus extra printf
+all: $(NAME) bonus extra printf gnl so_long
 
 $(NAME): $(OBJS)
 	ar crs $@ $^
@@ -83,6 +100,12 @@ extra: $(OBJS_EXTRA)
 	ar crs $(NAME) $^
 
 printf: $(OBJS_PRINTF)
+	ar crs $(NAME) $^
+
+gnl: $(OBJS_GNL)
+	ar crs $(NAME) $^
+
+so_long: $(OBJS_SOLONG)
 	ar crs $(NAME) $^
 
 $(OBJS): $(SRCS:%.c=src/base/%.c)
@@ -97,6 +120,12 @@ $(OBJS_EXTRA): $(SRCS_EXTRA:%.c=src/extra/%.c)
 $(OBJS_PRINTF): $(SRCS_PRINTF:%.c=src/ft_printf/%.c)
 	@mkdir -p obj obj/ft_printf
 	$(CC) $(CFLAGS) -c $(@:obj/ft_printf/%.o=src/ft_printf/%.c) -o $@
+$(OBJS_GNL): $(SRCS_GNL:%.c=src/get_next_line/%.c)
+	@mkdir -p obj obj/get_next_line
+	$(CC) $(CFLAGS) -c $(@:obj/get_next_line/%.o=src/get_next_line/%.c) -o $@
+$(OBJS_SOLONG): $(SRCS_SOLONG:%.c=src/so_long/%.c)
+	@mkdir -p obj obj/so_long
+	$(CC) $(CFLAGS) -c $(@:obj/so_long/%.o=src/so_long/%.c) -o $@
 
 fclean: clean
 	rm -f $(NAME)

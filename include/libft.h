@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 00:11:29 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/01/24 14:55:14 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/03/11 14:27:14 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdbool.h>
 # include <stdint.h>
 # include <stdarg.h>
+# include <fcntl.h>
 
 // ANSI text defines
 # define RST "\e[0m"
@@ -88,6 +89,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstdestroy(t_list *lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+void	*ft_lstget(t_list *list, unsigned int idx);
+t_list	*ft_lstfind(t_list *list, void *content);
+void	ft_lstremove(t_list **lst, t_list *node, void (*del)(void *));
 
 // Part 4: Extras
 
@@ -95,10 +99,28 @@ char	*ft_itoa_base(unsigned long n, char *base);
 char	*ft_itoa_uint(unsigned int n);
 int		ft_strfind(char *s, char c);
 char	*ft_strnjoin(char *s1, char *s2, ssize_t n, bool free_s1);
+char	*ft_strcpy_lb(char *dst, char *src, char delim, bool lb);
+void	ft_strcat(char *dst, const char *src);
 
 // Part 5: ft_printf
 
 typedef unsigned int	t_flags;
 int		ft_printf(const char *fstr, ...);
+
+// Part 6: get_next_line
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 64
+# endif
+
+char	*get_next_line(int fd);
+
+// Part 7: so_long
+
+bool	ft_str_startswith(char *str, char *test);
+bool	ft_str_endswith(char *str, char *test);
+bool	ft_str_equals(char *str, char *test);
+char	*ft_get_filename(char *str);
+char	**read_n_lines(char *fp, int n);
 
 #endif

@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint.c                                      :+:      :+:    :+:   */
+/*   ft_lstfind.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/24 14:51:19 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/03/11 14:28:16 by egaziogl         ###   ########.fr       */
+/*   Created: 2026/02/05 02:13:51 by egaziogl          #+#    #+#             */
+/*   Updated: 2026/03/11 14:27:42 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-void	ft_lstprint(t_list *lst)
+// return the element that has the same content (void *)
+t_list	*ft_lstfind(t_list *list, void *content)
 {
-	t_list	*node;
+	t_list	*result;
 
-	node = lst;
-	if (!node)
-		ft_printf("%sList is empty/null.%s\n", YEL, RST);
-	while (node)
+	result = list;
+	while (result)
 	{
-		ft_printf("Node: %p || Prev %p, Next %p\n",
-			node, node->prev, node->next);
-		node = node->next;
+		if (result->content == content)
+			return (result);
+		result = result->next;
 	}
+	return (NULL);
 }

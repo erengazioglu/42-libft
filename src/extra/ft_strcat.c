@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint.c                                      :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/24 14:51:19 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/03/11 14:28:16 by egaziogl         ###   ########.fr       */
+/*   Created: 2026/03/11 14:29:06 by egaziogl          #+#    #+#             */
+/*   Updated: 2026/03/11 14:29:12 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-void	ft_lstprint(t_list *lst)
+void	ft_strcat(char *dst, const char *src)
 {
-	t_list	*node;
-
-	node = lst;
-	if (!node)
-		ft_printf("%sList is empty/null.%s\n", YEL, RST);
-	while (node)
-	{
-		ft_printf("Node: %p || Prev %p, Next %p\n",
-			node, node->prev, node->next);
-		node = node->next;
-	}
+	while (*dst)
+		dst++;
+	while (*src)
+		*(dst++) = *(src++);
+	*dst = 0;
 }
