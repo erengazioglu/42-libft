@@ -6,13 +6,14 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 00:11:29 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/03/11 14:27:14 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/04 21:41:08 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "libft_char.h"
 # include <unistd.h>
 # include <stddef.h>
 # include <stdlib.h>
