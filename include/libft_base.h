@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 21:41:41 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/04 21:55:06 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/04 21:57:57 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,15 @@
 
 # include <stdbool.h>
 # include <unistd.h>
+
+// mem functions
+void	ft_bzero(void *s, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
+void	*ft_memmove(void *dest, const void *src, size_t n);
+void	*ft_memset(void *b, int c, size_t len);
+void	*ft_calloc(size_t count, size_t size);
 
 // char checks
 bool	ft_isalnum(int c);
@@ -37,11 +46,17 @@ bool	ft_str_startswith(char *str, char *test);
 bool	ft_str_endswith(char *str, char *test);
 bool	ft_str_equals(char *str, char *test);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strfind(char *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char	*ft_get_filename(char *str);
 
 // string manipulation
+char	*ft_strdup(const char *s);
+void	ft_strcat(char *dst, const char *src);
+char	*ft_strnjoin(char *s1, char *s2, ssize_t n, bool free_s1);
+char	*ft_strcpy_lb(char *dst, char *src, char delim, bool lb);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
