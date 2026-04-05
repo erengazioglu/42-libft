@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 21:41:41 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/05 21:37:51 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/05 22:15:06 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # include <stdbool.h>
 # include <unistd.h>
 
-// mem functions
+// memory functions
+
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -25,21 +26,24 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
 void	*ft_calloc(size_t count, size_t size);
 
-// char checks
+// char checks & manipulations
+
 bool	ft_isalnum(int c);
 bool	ft_isalpha(int c);
 bool	ft_isdigit(int c);
 bool	ft_isascii(int c);
 bool	ft_isprint(int c);
-bool	ft_toupper(int c);
-bool	ft_tolower(int c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
 
 // write
+
 void	ft_putchar(char c, int fd, bool newline);
 void	ft_putnbr(int n, int fd, bool newline);
 void	ft_putstr(char *s, int fd, int n, bool newline);
 
 // string checks
+
 size_t	ft_strlen(const char *s);
 bool	ft_str_startswith(char *str, char *test);
 bool	ft_str_endswith(char *str, char *test);

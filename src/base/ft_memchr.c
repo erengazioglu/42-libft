@@ -6,12 +6,19 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 17:38:37 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/01/15 14:40:31 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/05 22:14:47 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
+/**
+ * @brief	Scans the memory area for a specific value.
+ * @param s		Pointer to the memory area to scan.
+ * @param c		Value to match.
+ * @param n		Number of bytes to check.
+ * @return		Pointer to the matching byte.
+ */
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	while (n--)

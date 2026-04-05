@@ -6,12 +6,19 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 01:33:17 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/01/15 14:40:31 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/05 22:06:38 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
+/**
+ * @brief	Fills the memory area with a constant value.
+ * @param b		Pointer to the memory area.
+ * @param c		Constant value to fill the memory area with.
+ * @param len	The number of bytes to fill.
+ * @return		A pointer to the memory area b.
+ */
 void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*temp;

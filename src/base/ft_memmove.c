@@ -6,12 +6,21 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:01:57 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/01/15 14:40:31 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/05 22:07:20 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
+/**
+ * @brief	Copies bytes from one memory area to another.
+ * @param dest	Memory area to copy to.
+ * @param src	Memory area to copy from.
+ * @param n		Number of bytes to copy.
+ * @return		A pointer to the memory area copied to.
+ * @note	Uses a temporary array,
+ * 			so it's safe to use even if memory areas overlap.
+ */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	void	*temp;
