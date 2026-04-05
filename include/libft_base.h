@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 21:41:41 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/05 22:15:06 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/05 23:59:08 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,8 @@ bool	ft_str_startswith(char *str, char *test);
 bool	ft_str_endswith(char *str, char *test);
 bool	ft_str_equals(char *str, char *test);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-int		ft_strfind(char *s, char c);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strrchr(const char *s, int c);
+int		ft_strfind(char *s, char c, int n, bool reverse);
+char	*ft_strchr(const char *s, int c, bool reverse);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_get_filename(char *str);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));

@@ -90,6 +90,9 @@ OBJS_SOLONG	:= $(SRCS_SOLONG:%.c=obj/so_long/%.o)
 
 all: $(NAME) bonus extra printf gnl so_long
 
+tests:
+	$(CC) $(CFLAGS) tests/test_strfind.c src/base/ft_strlen.c src/extra/ft_strfind.c -o test_strfind.out
+
 $(NAME): $(OBJS)
 	ar crs $@ $^
 
@@ -132,4 +135,4 @@ fclean: clean
 clean:
 	rm -rf obj
 re: fclean all
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re tests

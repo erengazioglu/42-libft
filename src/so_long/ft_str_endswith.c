@@ -6,13 +6,19 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 18:05:31 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/03/11 15:26:53 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/05 22:20:47 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-bool	ft_str_endswith(char *str, char *test)
+/**
+ * @brief	Checks if the end of one string matches the other.
+ * @param str	String to be checked.
+ * @param test	String that should match.
+ * @param n		Number of characters in test string check.
+ */
+bool	ft_str_endswith(char *str, char *test, int n)
 {
 	int	len;
 
@@ -23,7 +29,7 @@ bool	ft_str_endswith(char *str, char *test)
 		str++;
 	while (*test)
 		test++;
-	while (len--)
+	while (len-- && n--)
 	{
 		if (*(--str) != *(--test))
 			return (false);
