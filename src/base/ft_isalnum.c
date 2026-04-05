@@ -6,11 +6,17 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 23:21:36 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/10 16:05:36 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/05 21:48:17 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+#include "../../include/libft_base.h"
+
+/**
+ * @brief Checks if a character represents an alphanumeric value.
+ * @param c		Character to check.
+ */
+bool	ft_isalnum(int c)
 {
 	if
 	(

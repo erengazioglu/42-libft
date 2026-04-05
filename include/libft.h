@@ -6,17 +6,16 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 00:11:29 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/04 21:58:01 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/05 21:36:22 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include "libft_char.h"
+# include "libft_base.h"
 # include <stddef.h>
 # include <stdlib.h>
-# include <stdbool.h>
 # include <stdint.h>
 # include <stdarg.h>
 # include <fcntl.h>
@@ -33,27 +32,6 @@
 # define WHT "\e[0;37m"
 
 // Part 1: Libc functions
-
-int		ft_atoi(const char *str);
-
-
-
-
-
-// Part 2: Additional functions
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strtrim(char const *s1, char const *set);
-char	**ft_split(char const *s, char c);
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-
-
-// Part 3: Bonus
-
-
-
-// Part 4: Extras
 
 
 

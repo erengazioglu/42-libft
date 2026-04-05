@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 21:41:41 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/04 21:57:57 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/05 21:37:51 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,9 @@ bool	ft_toupper(int c);
 bool	ft_tolower(int c);
 
 // write
-void	ft_putchar(char c, int fd);
-void	ft_putstr(char *s, int fd);
-void	ft_putstr_nl(char *s, int fd);
-void	ft_putnbr(int n, int fd);
+void	ft_putchar(char c, int fd, bool newline);
+void	ft_putnbr(int n, int fd, bool newline);
+void	ft_putstr(char *s, int fd, int n, bool newline);
 
 // string checks
 size_t	ft_strlen(const char *s);
@@ -51,18 +50,27 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_get_filename(char *str);
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
-// string manipulation
-char	*ft_strdup(const char *s);
+// string manipulation (operates on existing strings)
 void	ft_strcat(char *dst, const char *src);
 char	*ft_strnjoin(char *s1, char *s2, ssize_t n, bool free_s1);
 char	*ft_strcpy_lb(char *dst, char *src, char delim, bool lb);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
+// string generation (returns new strings)
+char	*ft_strdup(const char *s);
+char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	**ft_split(char const *s, char c);
+
 // int<->str conversions
 char	*ft_itoa(int n);
 char	*ft_itoa_base(unsigned long n, char *base);
 char	*ft_itoa_uint(unsigned int n);
+int		ft_atoi(const char *str);
 
 #endif

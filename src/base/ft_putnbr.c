@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:41:56 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/18 20:00:44 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/05 21:46:06 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft_base.h"
 
-void	ft_putnbr_fd(int n, int fd)
+/**
+ * @brief Writes an integer to a file descriptor.
+ * @param n		Integer to write.
+ * @param fd	File descriptor to write in.
+ * @param newline	Option to print a '\n' after.
+ */
+void	ft_putnbr(int n, int fd, bool newline)
 {
 	char	c;
 
@@ -32,4 +38,6 @@ void	ft_putnbr_fd(int n, int fd)
 		c = '0' + (n % 10);
 		write(fd, &c, 1);
 	}
+	if (newline)
+		write(fd, "\n", 1);
 }

@@ -20,7 +20,7 @@
 # define FLAG_SPACE		0x10
 # define FLAG_ALTERNATE	0x20
 
-# include "libft.h"
+# include "libft_base.h"
 
 typedef struct s_conv
 {

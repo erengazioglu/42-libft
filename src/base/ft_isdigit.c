@@ -6,11 +6,17 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 23:20:08 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/08 13:53:56 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/05 21:49:17 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "../../include/libft_base.h"
+
+/**
+ * @brief Checks if a character represents a numeric value.
+ * @param c		Character to check.
+ */
+bool	ft_isdigit(int c)
 {
 	if (c <= '9' && c >= '0')
 		return (1);
