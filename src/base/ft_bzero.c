@@ -6,11 +6,11 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 18:08:39 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/05 21:58:58 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/06 19:17:05 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "../../include/libft_base.h"
 
 /**
  * @brief	Sets a number of bytes of memory to zero.

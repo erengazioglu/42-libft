@@ -6,11 +6,11 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 00:36:53 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/05 22:17:17 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/06 19:18:42 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "../../include/libft_base.h"
 
 /**
  * @brief	Calculates the length of a null-terminated string.

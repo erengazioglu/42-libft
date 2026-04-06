@@ -6,12 +6,19 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 23:50:12 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/01/15 14:40:31 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/06 20:00:45 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "../../include/libft_base.h"
 
+/**
+ * @brief	Copies a string to another, and always NULL-terminates.
+ * @param dst	String to overwrite.
+ * @param src	String to be copied.
+ * @param dstsize	Size of dst. (at most dstsize-1 characters will be copied)
+ * @return	Length of src. If retval >= siz, truncation has occurred.
+ */
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;

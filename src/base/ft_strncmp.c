@@ -6,11 +6,11 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 16:58:34 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/05 23:47:05 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/06 19:18:46 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "../../include/libft_base.h"
 
 /**
  * @brief	Compare n characters of two strings.

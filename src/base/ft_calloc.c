@@ -6,11 +6,11 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 14:47:38 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/06 18:34:58 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/06 19:17:09 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "../../include/libft_base.h"
 
 /**
  * @brief	Allocates memory and fills it with zero.

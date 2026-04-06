@@ -6,11 +6,11 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:41:56 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/05 21:46:06 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/06 19:18:22 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_base.h"
+#include "../../include/libft_base.h"
 
 /**
  * @brief Writes an integer to a file descriptor.

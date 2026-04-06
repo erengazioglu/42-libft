@@ -6,11 +6,11 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:47:29 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/05 22:06:57 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/06 19:18:08 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "../../include/libft_base.h"
 
 /**
  * @brief	Copies bytes from one memory area to another.

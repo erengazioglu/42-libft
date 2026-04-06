@@ -6,11 +6,11 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 18:05:31 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/06 18:31:31 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/06 19:18:27 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "../../include/libft_base.h"
 
 /**
  * @brief	Checks if the end of one string matches the other.
