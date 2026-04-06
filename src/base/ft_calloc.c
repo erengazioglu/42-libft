@@ -6,13 +6,18 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 14:47:38 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/01/15 14:40:31 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/06 18:34:58 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
-#include <stdint.h>
 
+/**
+ * @brief	Allocates memory and fills it with zero.
+ * @param count	Number of members to allocate for.
+ * @param size	Size of members to be allocated.
+ * @return	Pointer to the memory address, or NULL if it fails.
+ */
 void	*ft_calloc(size_t count, size_t size)
 {
 	unsigned char	*temp;

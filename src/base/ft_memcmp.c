@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 16:06:17 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/05 22:09:59 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/06 18:52:24 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 /**
  * @brief	Compares bytes from two memory areas.
- * @param s1	
- * @param s2	Memory area to copy from.
+ * @param s1	Memory area to compare.
+ * @param s2	Other memory area to compare.
  * @param n		Number of bytes to compare.
  * @return		The difference between the first pair of bytes that differ.
  */

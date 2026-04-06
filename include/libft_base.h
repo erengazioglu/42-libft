@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 21:41:41 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/06 18:26:38 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/06 18:32:58 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdbool.h>
 # include <unistd.h>
+# include <stdint.h>
 
 // memory functions
 
@@ -45,8 +46,8 @@ void	ft_putstr(char *s, int fd, int n, bool newline);
 // string checks
 
 size_t	ft_strlen(const char *s);
-bool	ft_str_startswith(char *str, char *test);
-bool	ft_str_endswith(char *str, char *test);
+bool	ft_str_startswith(char *str, char *test, int n);
+bool	ft_str_endswith(char *str, char *test, int n);
 bool	ft_str_equals(char *str, char *test);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strfind(const char *s, char c, int n, bool reverse);
