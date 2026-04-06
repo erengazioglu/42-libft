@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:18:45 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/06 01:02:11 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/06 01:03:46 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
  * @param s	String to be checked.
  * @param c	Character to find.
  * @param n	Number of characters to check.
+ * @param reverse	If true, start checking from the end.
  * @return	The index of the first matching character.
  * @note	To get a pointer to the first match instead, use ft_strchr.
  * 			Prefer ft_strchr when only checking if value exists, 
