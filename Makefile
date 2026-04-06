@@ -92,6 +92,8 @@ all: $(NAME) bonus extra printf gnl so_long
 
 tests:
 	$(CC) $(CFLAGS) tests/test_strfind.c src/base/ft_strlen.c src/extra/ft_strfind.c -o test_strfind.out
+	$(CC) $(CFLAGS) tests/test_strchr.c src/base/ft_strlen.c src/base/ft_strchr.c -o test_strchr.out
+
 
 $(NAME): $(OBJS)
 	ar crs $@ $^
