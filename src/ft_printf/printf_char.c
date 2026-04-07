@@ -6,11 +6,11 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 14:54:06 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/01/19 19:48:25 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 15:26:00 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_printf.h"
+#include "../../include/libft_printf.h"
 
 int	printf_char(t_conv *conv, char val)
 {
@@ -27,7 +27,7 @@ int	printf_char(t_conv *conv, char val)
 			write(1, " ", 1);
 		}
 	}
-	ft_putchar(val);
+	ft_putchar(val, 1, false);
 	printed++;
 	while (padding > 0)
 	{

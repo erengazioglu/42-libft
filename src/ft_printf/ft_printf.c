@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 14:33:12 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/07 15:14:00 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 15:23:48 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,15 @@ static int	is_conv_valid(const char *str)
 
 	if (*str == '%')
 		return (1);
-	while (*str && !ft_strchr("csidxXup", *str))
+	while (*str && !ft_strchr("csidxXup", *str, 0, 0))
 	{
 		c = *(str++);
-		if (!ft_strchr("-0123456789+ #.", c))
+		if (!ft_strchr("-0123456789+ #.", c, 0, 0))
 			return (0);
 		while (*str && *str == c)
 			str++;
 	}
-	if (ft_strchr("csidxXup", *str))
+	if (ft_strchr("csidxXup", *str, 0, 0))
 		return (1);
 	return (0);
 }

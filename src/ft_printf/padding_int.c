@@ -6,11 +6,11 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 14:31:07 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/01/19 19:48:08 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 15:41:55 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_printf.h"
+#include "../../include/libft_printf.h"
 
 static int	count_chars(int n, int base)
 {
@@ -29,7 +29,7 @@ void	calculate_padding_int(t_conv *conv, int val, int *zeros, int *padding)
 {
 	unsigned int	char_count;
 
-	if (ft_strchr("xXp", conv->specifier))
+	if (ft_strchr("xXp", conv->specifier, 0, 0))
 		char_count = count_chars(val, 16);
 	else
 		char_count = count_chars(val, 10);
@@ -66,17 +66,17 @@ int	print_lpadding_int(t_conv *conv, int val, int *zeros, int *padding)
 	if (!(conv->flags & FLAG_LJUSTIFY))
 	{
 		while ((*padding)-- > 0)
-			printed += ft_putstr_n(" ", 1);
+			printed += ft_putstr(" ", 1, 1, false);
 	}
-	if (!ft_strchr("xXpu", conv->specifier))
+	if (!ft_strchr("xXpu", conv->specifier, 0, 0))
 	{
 		if (val < 0)
-			printed += ft_putstr_n("-", 1);
+			printed += ft_putstr("-", 1, 1, false);
 		else if (conv->flags & FLAG_SIGN)
-			printed += ft_putstr_n("+", 1);
+			printed += ft_putstr("+", 1, 1, false);
 	}
 	while ((*zeros)-- > 0)
-		printed += ft_putstr_n("0", 1);
+		printed += ft_putstr("0", 1, 1, false);
 	return (printed);
 }
 
@@ -88,7 +88,7 @@ int	print_rpadding_int(t_conv *conv, int *padding)
 	if (conv->flags & FLAG_LJUSTIFY)
 	{
 		while ((*padding)-- > 0)
-			printed += ft_putstr_n(" ", 1);
+			printed += ft_putstr(" ", 1, 1, false);
 	}
 	return (printed);
 }

@@ -6,11 +6,11 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 14:30:34 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/01/19 19:48:24 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 15:28:05 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_printf.h"
+#include "../../include/libft_printf.h"
 
 int	printf_hex(t_conv *conv, unsigned int val)
 {
@@ -28,7 +28,7 @@ int	printf_hex(t_conv *conv, unsigned int val)
 	printed = 0;
 	calculate_padding_int(conv, val, &zeros, &padding);
 	printed += print_lpadding_int(conv, val, &zeros, &padding);
-	printed += ft_putstr_n(str, -1);
+	printed += ft_putstr(str, 1, -1, false);
 	printed += print_rpadding_int(conv, &padding);
 	free(str);
 	return (printed);

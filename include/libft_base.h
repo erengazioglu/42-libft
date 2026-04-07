@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 21:41:41 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/07 13:42:52 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 15:39:47 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int		ft_tolower(int c);
 
 void	ft_putchar(char c, int fd, bool newline);
 void	ft_putnbr(int n, int fd, bool newline);
-void	ft_putstr(char *s, int fd, int n, bool newline);
+int		ft_putstr(char *s, int fd, int n, bool newline);
 
 // string checks
 

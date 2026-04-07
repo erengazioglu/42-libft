@@ -6,11 +6,11 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 20:25:03 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/01/19 19:48:25 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 15:25:50 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_printf.h"
+#include "../../include/libft_printf.h"
 
 t_conv	*new_conv(void)
 {
@@ -66,9 +66,9 @@ t_conv	*parse_conv(const char **str)
 	conv = new_conv();
 	if (!conv)
 		return (NULL);
-	while (**str && !ft_strchr("cspdiuxX%", **str))
+	while (**str && !ft_strchr("cspdiuxX%", **str, 0, 0))
 	{
-		if (ft_strchr("-0+ #", **str))
+		if (ft_strchr("-0+ #", **str, 0, 0))
 			*str = parse_flag(*str, conv);
 		else if (**str == '.')
 			*str = parse_precision(*str, conv);
