@@ -10,8 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef FT_LIBFT_PRINTF_H
+# define FT_LIBFT_PRINTF_H
+
+# include "libft_base.h"
+# include <stdarg.h>
 
 # define FLAG_LJUSTIFY	0x01
 # define FLAG_ZEROPAD	0x02
@@ -20,7 +23,7 @@
 # define FLAG_SPACE		0x10
 # define FLAG_ALTERNATE	0x20
 
-# include "libft_base.h"
+typedef unsigned int	t_flags;
 
 typedef struct s_conv
 {
@@ -30,13 +33,8 @@ typedef struct s_conv
 	unsigned int	width;
 }	t_conv;
 
-// helpers
-int		ft_putstr_n(const char *str, int n);
-void	ft_putchar(const char c);
-int		ft_min(int i1, int i2);
-int		ft_isnegative(int i);
-
 // padding
+
 void	calculate_padding_int(t_conv *conv, int val, int *zeros, int *padding);
 int		print_lpadding_int(t_conv *conv, int val, int *zeros, int *padding);
 int		print_rpadding_int(t_conv *conv, int *padding);
@@ -44,7 +42,8 @@ int		calculate_padding_str(t_conv *conv, char *val);
 int		print_lpadding_str(t_conv *conv, int *padding);
 int		print_rpadding_str(t_conv *conv, int *padding);
 
-// actual functions
+// parsing & printing
+
 int		ft_printf(const char *fstr, ...);
 t_conv	*parse_conv(const char **str);
 int		printf_char(t_conv *conv, char val);

@@ -1,44 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   helpers.c                                          :+:      :+:    :+:   */
+/*   libft_gnl.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 14:39:44 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/12/14 14:30:56 by egaziogl         ###   ########.fr       */
+/*   Created: 2026/04/07 13:34:00 by egaziogl          #+#    #+#             */
+/*   Updated: 2026/04/07 13:41:57 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_LIBFT_GNL_H
+# define FT_LIBFT_GNL_H
 
-int	ft_putstr_n(const char *str, int n)
-{
-	int	i;
+# include "libft_base.h"
 
-	i = 0;
-	while (*str && n)
-	{
-		n--;
-		i++;
-		write(1, str++, 1);
-	}
-	return (i);
-}
+# ifndef GNL_BUFSIZ
+#  define GNL_BUFSIZ 64
+# endif
 
-void	ft_putchar(const char c)
-{
-	write(1, &c, 1);
-}
+char	*get_next_line(int fd);
 
-int	ft_min(int i1, int i2)
-{
-	if (i1 > i2)
-		return (i2);
-	return (i1);
-}
-
-int	ft_isnegative(int i)
-{
-	return (i < 0);
-}
+#endif

@@ -6,18 +6,30 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 21:41:41 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/07 13:23:27 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 13:42:52 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIBFT_BASE
-# define FT_LIBFT_BASE
+#ifndef FT_LIBFT_BASE_H
+# define FT_LIBFT_BASE_H
 
 # include <unistd.h>
 # include <stdbool.h>
 # include <stdint.h>
 # include <stddef.h>
 # include <errno.h>
+
+// ANSI text defines
+
+# define RST "\e[0m"
+# define BLK "\e[0;30m"
+# define RED "\e[0;31m"
+# define GRN "\e[0;32m"
+# define YEL "\e[0;33m"
+# define BLU "\e[0;34m"
+# define MAG "\e[0;35m"
+# define CYN "\e[0;36m"
+# define WHT "\e[0;37m"
 
 // memory functions
 
