@@ -6,12 +6,11 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:43:05 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/07 11:44:13 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 16:08:25 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft_base.h"
-
 
 static char	check_rest(char const *str, char const *set)
 {

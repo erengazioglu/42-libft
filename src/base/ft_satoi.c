@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 12:41:47 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/07 13:04:46 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 16:08:49 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ static int	case_intmin(const char *str)
 	}
 	return (-2147483648);
 }
+
 /**
  * @brief	Converts the given string into an integer, enforcing a properly
  * formatted string representing an integer. Allows a single '-' or '+' prefix.

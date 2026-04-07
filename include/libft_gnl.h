@@ -6,12 +6,12 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 13:34:00 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/07 13:41:57 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 16:10:33 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIBFT_GNL_H
-# define FT_LIBFT_GNL_H
+#ifndef LIBFT_GNL_H
+# define LIBFT_GNL_H
 
 # include "libft_base.h"
 

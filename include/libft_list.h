@@ -6,12 +6,12 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 21:46:05 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/07 13:41:24 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 16:10:42 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIBFT_LIST_H
-# define FT_LIBFT_LIST_H
+#ifndef LIBFT_LIST_H
+# define LIBFT_LIST_H
 
 typedef struct s_list
 {

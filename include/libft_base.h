@@ -6,12 +6,12 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 21:41:41 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/07 15:57:47 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 16:10:26 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIBFT_BASE_H
-# define FT_LIBFT_BASE_H
+#ifndef LIBFT_BASE_H
+# define LIBFT_BASE_H
 
 # include <unistd.h>
 # include <stdlib.h>
