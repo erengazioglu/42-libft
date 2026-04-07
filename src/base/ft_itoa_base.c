@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 15:53:04 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/01/15 14:40:31 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 13:31:17 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,13 @@ static void	copy_digits(unsigned long n, char *s, int len, char *base)
 	}
 }
 
+/**
+ * @brief	Parses the given integer into a new, memory-allocated string
+ * (in a custom base, represented by a string of unique characters).
+ * @param n		Integer to be parsed.
+ * @param base	Set of unique characters representing the base.
+ * @return	The resulting string, or NULL if there's a malloc error.
+ */
 char	*ft_itoa_base(unsigned long n, char *base)
 {
 	char	*result;

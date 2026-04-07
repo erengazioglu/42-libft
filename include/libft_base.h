@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 21:41:41 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/07 12:48:25 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 13:23:27 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ size_t	ft_strlen(const char *s);
 bool	ft_str_startswith(char *str, char *test, int n);
 bool	ft_str_endswith(char *str, char *test, int n);
 bool	ft_str_equals(char *str, char *test);
+bool	ft_str_isnum(char *s);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strfind(const char *s, char c, int n, bool reverse);
 char	*ft_strchr(const char *s, char c, int n, bool reverse);
@@ -87,5 +88,6 @@ char	*ft_itoa(int n);
 char	*ft_itoa_base(unsigned long n, char *base);
 char	*ft_itoa_uint(unsigned int n);
 int		ft_atoi(const char *str);
+int		ft_satoi(const char *str);
 
 #endif
