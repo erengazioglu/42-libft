@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 11:07:25 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/06 18:27:24 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 11:40:09 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  * first occurrence.
  * @param s	String to be checked.
  * @param c	Character to find.
- * @param n	Number of characters to check.
+ * @param n	Number of characters to check. If <= 0, checks the entire string.
  * @param reverse	If true, start checking from the end.
  * @return	A pointer to the first matching character.
  * @note	To get the index of first match instead, use ft_strfind.

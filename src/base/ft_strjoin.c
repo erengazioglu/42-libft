@@ -5,23 +5,45 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 15:42:44 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/01/15 14:40:31 by egaziogl         ###   ########.fr       */
+/*   Created: 2026/01/15 14:34:51 by egaziogl          #+#    #+#             */
+/*   Updated: 2026/04/07 11:49:24 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "../../include/libft_base.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+/**
+ * @brief	Joins two strings together, and returns a new string as a result.
+ * @param s1		String to be joined to.
+ * @param s2		String to add to s1.
+ * @param n			Number of characters from s1 to join to s2.
+ * @param free_s1	Option to free s1 at the end of the function.
+ * @return	A pointer to the resulting new string.
+ */
+char	*ft_strjoin(char *s1, char *s2, ssize_t n, bool free_s1)
 {
 	char	*result;
-	int		len;
+	char	*result_base;
+	char	*s1_base;
 
-	len = ft_strlen(s1) + ft_strlen(s2);
-	result = ft_calloc(len + 1, sizeof(char));
+	if (n < 0 || n > (ssize_t) ft_strlen(s2))
+		result = ft_calloc((ft_strlen(s1) + ft_strlen(s2) + 1), sizeof(char));
+	else
+		result = ft_calloc((ft_strlen(s1) + n + 1), sizeof(char));
 	if (!result)
+	{
+		if (free_s1)
+			free(s1);
 		return (NULL);
-	ft_strlcpy(result, s1, len + 1);
-	ft_strlcat(result, s2, len + 1);
-	return (result);
+	}
+	result_base = result;
+	s1_base = s1;
+	while (*s1)
+		*(result++) = *(s1++);
+	while (*s2 && n-- != 0)
+		*(result++) = *(s2++);
+	*result = '\0';
+	if (free_s1)
+		free(s1_base);
+	return (result_base);
 }

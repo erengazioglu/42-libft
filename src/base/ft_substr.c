@@ -6,12 +6,19 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:43:14 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/01/15 14:40:31 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 11:50:46 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "../../include/libft_base.h"
 
+/**
+ * @brief	Creates a copy of a slice of a given string.
+ * @param s		String to slice.
+ * @param start	Starting index (inclusive).
+ * @param len	Number of characters to copy.
+ * @return	New string (memory-allocated).
+ */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*temp;

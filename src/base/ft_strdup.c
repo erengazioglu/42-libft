@@ -6,12 +6,17 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:24:02 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/01/15 14:40:31 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 11:38:29 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "../../include/libft_base.h"
 
+/**
+ * @brief	Creates a memory-allocated copy of the string.
+ * @param s	String to clone.
+ * @return	New string.
+ */
 char	*ft_strdup(const char *s)
 {
 	char	*ptr;
