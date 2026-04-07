@@ -6,17 +6,25 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:42:11 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/07 12:15:23 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 12:25:27 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-static void	free_list(char **list)
+/**
+ * @brief	Frees a memory-allocated array of strings.
+ * @param arr	Array to free.
+ */
+void	free_strarr(char **arr)
 {
-	while (*list)
-		free(*(list++));
-	free(list);
+	int	i;
+
+	if (!arr)
+		return ;
+	while (arr[i])
+		free(arr[i++]);
+	free(arr);
 }
 
 static int	skip(char const *s, char c, bool is_word)
@@ -102,7 +110,7 @@ char	**ft_split(char const *s, char c, bool ltrim)
 	{
 		s += pick_word(s, c, result, ltrim);
 		if (!(*result))
-			return (free_list(retval), NULL);
+			return (free_strarr(retval), NULL);
 		result++;
 		s += skip(s, c, false);
 	}

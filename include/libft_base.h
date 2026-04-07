@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 21:41:41 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/07 12:00:54 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 12:25:57 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
 void	*ft_calloc(size_t count, size_t size);
+void	free_strarr(char **arr);
 
 // int checks
 
@@ -77,9 +78,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strjoin(char *s1, char *s2, ssize_t n, bool free_s1);
 char	*ft_strsjoin(char *s1, char *s2, char sep, bool free_s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	**ft_split(char const *s, char c);
+char	**ft_split(char const *s, char c, bool ltrim);
 
 // int<->str conversions
+
 char	*ft_itoa(int n);
 char	*ft_itoa_base(unsigned long n, char *base);
 char	*ft_itoa_uint(unsigned int n);
