@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:42:11 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/01/15 14:40:31 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 12:15:23 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,57 +19,92 @@ static void	free_list(char **list)
 	free(list);
 }
 
-static int	count_words(char const *s, char c)
+static int	skip(char const *s, char c, bool is_word)
+{
+	int	i;
+
+	i = 0;
+	if (is_word)
+	{
+		while (s[i] && s[i] != c)
+			i++;
+	}
+	else
+	{
+		while (s[i] && s[i] == c)
+			i++;
+	}
+	return (i);
+}
+
+static int	count_words(char const *s, char c, bool ltrim)
 {
 	int	count;
 
-	count = 0;
+	if (*s && ltrim)
+		s += skip(s, c, false);
+	if (!(*s))
+		return (0);
+	s += skip(s, c, false);
+	s += skip(s, c, true);
+	count = 1;
 	while (*s)
 	{
-		while (*s && *s == c)
-			s++;
+		s += skip(s, c, false);
 		if (*s)
+		{
 			count++;
-		while (*s && *s != c)
-			s++;
+			s += skip(s, c, true);
+		}
 	}
 	return (count);
 }
 
-static int	pick_word(char const *s, char c, char **result)
+static int	pick_word(char const *s, char c, char **result, bool ltrim)
 {
+	int	start;
 	int	len;
 
-	len = 0;
+	start = 0;
+	if (ltrim)
+		start += skip(s, c, false);
+	len = start;
 	while (s[len] && s[len] != c)
 		len++;
-	*result = ft_substr(s, 0, len);
+	*result = ft_substr(s, start, len);
 	return (len);
 }
 
-char	**ft_split(char const *s, char c)
+/**
+ * @brief	Splits a string at every occurrence of a given delimiter,
+ * 	and returns a pointer to the first string.
+ * @param s	String to split.
+ * @param c	Delimiter to split at.
+ * @param ltrim	Option to trim the first word.
+ * @return	A pointer to an array of null-terminated C strings.
+ * @note	The return value is a memory-allocated, NULL-terminated
+ * 	array of pointers. It must be protected and freed accordingly.
+ */
+char	**ft_split(char const *s, char c, bool ltrim)
 {
 	char	**result;
 	char	**retval;
 
-	result = ft_calloc(count_words(s, c) + 1, sizeof(char *));
+	result = ft_calloc(count_words(s, c, ltrim) + 1, sizeof(char *));
 	if (!result)
 		return (NULL);
 	retval = result;
+	if (ltrim && *s)
+		s += skip(s, c, false);
+	if (!(*s))
+		return (retval);
 	while (*s)
 	{
-		while (*s && *s == c)
-			s++;
-		if (*s)
-		{
-			s += pick_word(s, c, result);
-			if (!(*result))
-			{
-				free_list(retval);
-				return (NULL);
-			}
-			result++;
-		}
+		s += pick_word(s, c, result, ltrim);
+		if (!(*result))
+			return (free_list(retval), NULL);
+		result++;
+		s += skip(s, c, false);
 	}
 	return (retval);
 }
