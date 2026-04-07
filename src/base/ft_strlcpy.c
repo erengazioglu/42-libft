@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 23:50:12 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/06 20:00:45 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 11:36:54 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
  * @param src	String to be copied.
  * @param dstsize	Size of dst. (at most dstsize-1 characters will be copied)
  * @return	Length of src. If retval >= siz, truncation has occurred.
+ * @note	Only src needs to be NULL-terminated.
  */
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
