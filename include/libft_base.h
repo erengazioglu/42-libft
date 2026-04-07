@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 21:41:41 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/07 15:39:47 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 15:57:47 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_LIBFT_BASE_H
 
 # include <unistd.h>
+# include <stdlib.h>
 # include <stdbool.h>
 # include <stdint.h>
 # include <stddef.h>

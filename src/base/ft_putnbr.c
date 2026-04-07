@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:41:56 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/06 19:18:22 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 15:58:13 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ void	ft_putnbr(int n, int fd, bool newline)
 	else if (n < 0)
 	{
 		write(fd, "-", 1);
-		ft_putnbr_fd(-n, fd);
+		ft_putnbr(-n, fd, false);
 	}
 	else
 	{
 		if (n / 10)
-			ft_putnbr_fd(n / 10, fd);
+			ft_putnbr(n / 10, fd, false);
 		c = '0' + (n % 10);
 		write(fd, &c, 1);
 	}

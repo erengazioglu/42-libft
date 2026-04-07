@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 15:27:28 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/07 13:38:21 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 16:06:16 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static bool	init(int fd, char **stash, char **buffer, int *bytes_read)
 	*buffer = ft_calloc(GNL_BUFSIZ + 1, 1);
 	if (!(*buffer))
 		return (free(*stash), stash = NULL, false);
-	ft_strcpy_lb(*buffer, *stash, '\0', false);
+	ft_strcpy(*buffer, *stash, '\0', '\0');
 	*bytes_read = GNL_BUFSIZ;
 	i = 0;
 	while ((*stash)[i])
@@ -61,7 +61,7 @@ static char	*handle_lb(char **stash, char *buffer, int lb_pos, int bytes_read)
 	*stash = ft_strjoin(*stash, buffer, bytes_read, true);
 	if (!(*stash))
 		return (free(buffer), NULL);
-	result = ft_strnjoin("", *stash, stash_len + lb_pos + 1, false);
+	result = ft_strjoin("", *stash, stash_len + lb_pos + 1, false);
 	if (!result)
 		return (free(*stash), free(buffer), (*stash) = NULL, NULL);
 	return (free(buffer), result);
@@ -75,14 +75,14 @@ char	*handle_eof(char **stash, char *buffer, int bytes_read)
 	if (bytes_read == 0)
 	{
 		if (ft_strlen(*stash) != 0)
-			result = ft_strnjoin("", *stash, -1, false);
+			result = ft_strjoin("", *stash, -1, false);
 		return (free(buffer), free(*stash), *stash = NULL, result);
 	}
-	*stash = ft_strnjoin(*stash, buffer, bytes_read, true);
+	*stash = ft_strjoin(*stash, buffer, bytes_read, true);
 	free(buffer);
 	if (!(*stash))
 		return (NULL);
-	result = ft_strnjoin("", *stash, -1, false);
+	result = ft_strjoin("", *stash, -1, false);
 	return (result);
 }
 

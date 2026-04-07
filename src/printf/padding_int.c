@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 14:31:07 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/04/07 15:41:55 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/04/07 15:59:06 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	calculate_padding_int(t_conv *conv, int val, int *zeros, int *padding)
 	else
 		char_count = count_chars(val, 10);
 	*zeros = 0;
-	*padding = conv->width - char_count - ft_isnegative(val);
+	*padding = conv->width - char_count - (val < 0);
 	if (conv->flags & (FLAG_ZEROPAD | FLAG_PRECISION))
 	{
 		if (conv->flags & FLAG_PRECISION)
@@ -42,7 +42,7 @@ void	calculate_padding_int(t_conv *conv, int val, int *zeros, int *padding)
 			*zeros = conv->precision - char_count;
 			*padding = ft_min(*padding, conv->width - conv->precision);
 			if (conv->flags & FLAG_ZEROPAD || conv->precision > char_count)
-				*padding -= ft_isnegative(val);
+				*padding -= (val < 0);
 		}
 		else
 		{
